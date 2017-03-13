@@ -1,0 +1,76 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="panel panel-info" *ngIf="!madeEditable">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Title: {{book.source._value.name}}</h3>
+
+                    <div class="btn-group pull-right">
+                        <button class="btn btn-primary btn-sm"
+                                title="edit book"
+                                (click)="editableBook()">
+                            <i class="glyphicon glyphicon-edit"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+
+                        <div class="col-md-4">
+                            <img *ngIf="book.source._value.imageUrl"
+                                 [src]="book.source._value.imageUrl"
+                                 class="book-img" />
+                        </div>
+
+                        <div class="col-md-8">
+
+                            <table class="table table-bordered">
+                                <thead>
+                                <th>
+                                    Release Date:
+                                </th>
+                                <th>
+                                    Author:
+                                </th>
+                                <th>
+                                    Genre:
+                                </th>
+                                <th>
+                                    Product Code:
+                                </th>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <p>{{book.source._value.releaseDate}}</p>
+                                    </td>
+                                    <td>
+                                        <p>{{book.source._value.author}}</p>
+                                    </td>
+                                    <td>
+                                        <p>{{book.source._value.genre}}</p>
+                                    </td>
+                                    <td>
+                                        <p>{{book.source._value.productCode}}</p>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="description">
+                                <b>Description: </b>
+                                <p>{{book.source._value.description}}</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <edit-book *ngIf="madeEditable"
+                       (notifyEdit)="editMade($event)" ></edit-book>
+        </div>
+    </div>
+</div>

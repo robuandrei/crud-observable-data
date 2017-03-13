@@ -1,0 +1,164 @@
+<!-- Modal -->
+<div class="modal fade" id="addBookMd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+
+                <h4 class="modal-title" id="myModalLabel">Add Book</h4>
+            </div>
+
+            <form (ngSubmit)="onSubmit(addBookForm)"
+                  #addBookForm="ngForm"
+                  class="addBookForm">
+
+                <div class="form-group col-md-4 col-sm-12">
+                    <label for="bookName">Book name:</label>
+                    <input type="text"
+                           class="form-control"
+                           placeholder="Name"
+                           [(ngModel)]="name"
+                           id="bookName"
+                           name="name"
+                           required/>
+                </div>
+
+                <div class="form-group col-md-4 col-sm-12">
+                    <label for="productCode">Product code:</label>
+                    <input type="text"
+                           class="form-control"
+                           placeholder="Code"
+                           [(ngModel)]="productCode"
+                           id="productCode"
+                           name="productCode"
+                           required />
+                </div>
+
+                <div class="form-group col-md-4 col-sm-12">
+                    <label for="releaseDate">Release date:</label>
+                    <input type="date"
+                           class="form-control"
+                           placeholder="Date"
+                           [(ngModel)]="releaseDate"
+                           id="releaseDate"
+                           name="releaseDate"
+                           required />
+                </div>
+
+                <div class="form-group col-md-4 col-sm-12">
+                    <label for="author">Author:</label>
+                    <input type="text"
+                           class="form-control"
+                           placeholder="Author"
+                           [(ngModel)]="author"
+                           id="author"
+                           name="author"
+                           required />
+                </div>
+
+                <div class="form-group col-md-4 col-sm-12">
+                    <label for="genre">Genre:</label>
+                    <select class="form-control"
+                            id="genre" name="genre"
+                            [(ngModel)]="genre"
+                            required>
+                        <option>War</option>
+                        <option>Romance</option>
+                        <option>Fiction</option>
+                        <option>Another...</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-md-4 col-sm-12">
+                    <label for="specifications">Specifications:</label>
+                    <input type="text"
+                           class="form-control"
+                           placeholder="Specifications"
+                           [(ngModel)]="specifications"
+                           id="specifications"
+                           name="specifications"
+                           required />
+                </div>
+
+                <div class="form-group col-md-4 col-sm-12">
+                    <label for="price">Price:</label>
+                    <input type="number"
+                           class="form-control"
+                           placeholder="Price"
+                           [(ngModel)]="price"
+                           id="price"
+                           name="price"
+                           required />
+                </div>
+
+                <div class="form-group col-md-4 col-sm-12">
+                    <label for="starRating">Star rating:</label>
+                    <select class="form-control"
+                            id="starRating"
+                            [(ngModel)]="starRating"
+                            name="starRating"
+                            required>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-md-4 col-sm-12">
+                    <label for="imageUrl">Image link:</label>
+                    <input type="text"
+                           class="form-control"
+                           placeholder="Image Url"
+                           [(ngModel)]="imageUrl"
+                           id="imageUrl"
+                           name="imageUrl"
+                           required/>
+                </div>
+
+                <div class="form-group col-md-12 col-sm-12">
+                    <label >In stock:</label>
+                    <div class="radio">
+                        <label>
+                            <input type="radio"
+                                   name="inStock"
+                                   value="true"
+                                   [(ngModel)]="inStock"
+                                   checked="checked">Yes
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio"
+                                   name="inStock"
+                                   value="false"
+                                   [(ngModel)]="inStock">No
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group col-md-12 col-sm-12">
+                    <label for="description">Description: </label>
+                    <textarea class="form-control"
+                              [(ngModel)]="description"
+                              required
+                              id="description"
+                              name="description"></textarea>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="submit"
+                            class="btn btn-warning btn-sm"
+                            [disabled]="!addBookForm.valid"
+                            onclick="$('#addBookMd').modal('hide');">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

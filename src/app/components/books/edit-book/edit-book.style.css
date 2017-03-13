@@ -1,0 +1,23 @@
+.book-img {
+    max-width: 100%;
+    display:block;
+    margin: 0 auto;
+    border-right: 1px solid #ddd;
+    padding-right: 25px;
+}
+
+.panel-heading h3 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: normal;
+    width: 75%;
+    padding-top: 8px;
+    display: inline-block;
+}
+
+.panel-heading > h3 > input {
+    width: 50%;
+    display: inline;
+    height: 30px;
+}

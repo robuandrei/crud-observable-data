@@ -1,0 +1,21 @@
+.thumbnail > div > img {
+    height: 200px;
+    padding: 5px;
+}
+
+.thumbnail-img{
+    background-color:#f2f2f2;
+    text-align: center;
+}
+
+.thumbnail > .caption >  h4 {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.thumbnail-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

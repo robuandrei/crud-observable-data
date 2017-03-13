@@ -1,0 +1,154 @@
+<div >
+    <form (ngSubmit)="onSubmit(editBookForm, editableBook.source._value.id)"
+          #editBookForm="ngForm"
+          class="editBookForm">
+
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    Title: <input type="text"
+                                  class="form-control"
+                                  placeholder="name"
+                                  [(ngModel)]="editableBook.source._value.name"
+                                  value="{{editableBook.source._value.name}}"
+                                  id="name"
+                                  name="name"/>
+                </h3>
+
+                <div class="btn-group pull-right">
+                    <button class="btn btn-warning btn-sm"
+                            title="save changes"
+                            type="submit"
+                            [disabled]="!editBookForm.valid">
+                        <i class="glyphicon glyphicon-saved"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+
+                    <div class="col-md-4">
+                        <img *ngIf="editableBook.source._value.imageUrl"
+                             [src]="editableBook.source._value.imageUrl"
+                             class="book-img" />
+                        <hr />
+                        <input type="text"
+                               class="form-control"
+                               placeholder="imageUrl"
+                               [(ngModel)]="editableBook.source._value.imageUrl"
+                               value="{{editableBook.source._value.imageUrl}}"
+                               id="imageUrl"
+                               name="imageUrl"/>
+                    </div>
+
+                    <div class="col-md-8">
+
+                        <table class="table table-bordered">
+                            <thead>
+                            <th>
+                                Release Date:
+                            </th>
+                            <th>
+                                Author:
+                            </th>
+                            <th>
+                                Genre:
+                            </th>
+                            <th>
+                                Product Code:
+                            </th>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <input type="text"
+                                           class="form-control"
+                                           placeholder="releaseDate"
+                                           [(ngModel)]="editableBook.source._value.releaseDate"
+                                           value="{{editableBook.source._value.releaseDate}}"
+                                           id="releaseDate"
+                                           name="releaseDate"/>
+                                </td>
+                                <td>
+                                    <input type="text"
+                                           class="form-control"
+                                           placeholder="author"
+                                           [(ngModel)]="editableBook.source._value.author"
+                                           value="{{editableBook.source._value.author}}"
+                                           id="author"
+                                           name="author"/>
+                                </td>
+                                <td>
+                                    <input type="text"
+                                           class="form-control"
+                                           placeholder="genre"
+                                           [(ngModel)]="editableBook.source._value.genre"
+                                           value="{{editableBook.source._value.genre}}"
+                                           id="genre"
+                                           name="genre"/>
+                                </td>
+                                <td>
+                                    <input type="text"
+                                           class="form-control"
+                                           placeholder="productCode"
+                                           [(ngModel)]="editableBook.source._value.productCode"
+                                           value="{{editableBook.source._value.productCode}}"
+                                           id="productCode"
+                                           name="productCode"/>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="description">
+                            <b>Description: </b>
+                            <textarea class="form-control"
+                                      placeholder="description"
+                                      [(ngModel)]="editableBook.source._value.description"
+                                      value="{{editableBook.source._value.description}}"
+                                      id="description"
+                                      name="description"
+                                      rows="20">
+
+                            </textarea>
+
+                            <input type="hidden"
+                                   class="form-control"
+                                   placeholder="Specifications"
+                                   [(ngModel)]="editableBook.source._value.specifications"
+                                   value="{{editableBook.source._value.specifications}}"
+                                   id="specifications"
+                                   name="specifications"/>
+
+                            <input type="hidden"
+                                   class="form-control"
+                                   placeholder="Price"
+                                   [(ngModel)]="editableBook.source._value.price"
+                                   value="{{editableBook.source._value.price}}"
+                                   id="price"
+                                   name="price"/>
+
+                            <input type="hidden"
+                                   class="form-control"
+                                   placeholder="starRating"
+                                   [(ngModel)]="editableBook.source._value.starRating"
+                                   value="{{editableBook.source._value.starRating}}"
+                                   id="starRating"
+                                   name="starRating"/>
+
+                            <input type="hidden"
+                                   class="form-control"
+                                   placeholder="inStock"
+                                   [(ngModel)]="editableBook.source._value.inStock"
+                                   value="{{editableBook.source._value.inStock}}"
+                                   id="inStock"
+                                   name="inStock"/>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
